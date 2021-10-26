@@ -24,3 +24,8 @@ class ProductPageLocators():
 
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:first-child .alertinner")
     BASKET_VALUE_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:last-child .alertinner p")
+
+class BasketPageLocators():
+    COMMON_BASKET_LINK = (By.CSS_SELECTOR, '.basket-mini a')
+    BASKET_SUMMARY = (By.CSS_SELECTOR, '.basket_summary')
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, '#content_inner > p')
