@@ -6,9 +6,10 @@ class BasePageLocators():
     USER_ICON = (By.CSS_SELECTOR, '.icon-user')
 
 class MainPageLocators():
-    pass
+    MAIN_PAGE_URL = "http://selenium1py.pythonanywhere.com/"
 
 class LoginPageLocators():
+    LOGIN_PAGE_URL = 'http://selenium1py.pythonanywhere.com/accounts/login/'
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     LOGIN_FORM_MAIL = (By.NAME, "login-username")
     LOGIN_FORM_PASSWORD = (By.NAME, "login-password")
@@ -21,6 +22,7 @@ class LoginPageLocators():
 
 
 class ProductPageLocators():
+    PRODUCT_PAGE_URL = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207'
     PRODUCT_TITLE = (By.CSS_SELECTOR, ".product_main h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     BTN_ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
