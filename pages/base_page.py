@@ -2,7 +2,7 @@ from selenium.common.exceptions import NoSuchElementException, NoAlertPresentExc
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators, BasketPageLocators
-import math
+import math, string, random
 
 from training_project.pages.locators import ProductPageLocators
 
@@ -37,7 +37,7 @@ class BasePage():
             alert.accept()
             return alert_text
         except NoAlertPresentException:
-            print("No second alert presented")
+            print('No second alert presented')
 
     def is_not_element_present(self, how, what, timeout=4):
         try:
@@ -60,8 +60,14 @@ class BasePage():
         login_link.click()
 
     def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), 'Login link is not presented'
 
     def go_to_basket_page(self):
         basket_link = self.browser.find_element(*BasketPageLocators.COMMON_BASKET_LINK)
         basket_link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), 'User icon is not presented, probably unauthorized user'
+
+    def rand_str(self, size=6, chars=string.ascii_lowercase):
+        return ''.join(random.choices(chars, k=size))
